@@ -1,5 +1,8 @@
-About OpenResources
-===================
+.
+
+=============
+OpenResources
+=============
 
 OpenResources is a flexible, tag-based database application for Django. It has been developed for `Vivir Bien`_, a mapping platform for solidarity economy resources.
 
