@@ -28,8 +28,10 @@ LANGUAGES = (
 
 MEDIA_ROOT = ''
 MEDIA_URL = '/media/'
-ADMIN_MEDIA_PREFIX = '/admin/'
+ADMIN_MEDIA_PREFIX = '/media/admin/'
 SERVE_STATIC = True
+
+AUTH_PROFILE_MODULE = 'openresources.UserProfile'
 
 SECRET_KEY = 'rx62k39-m+c%gh78r+nau0x$j_89y*o@d4)+qu*ey^5ktg72a_'
 
