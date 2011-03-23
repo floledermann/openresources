@@ -48,7 +48,7 @@ function get_icons(feature) {
 	    }
 	}
 	if (first_is_subicon || icons.length == 0) {
-		icons.splice(0, 0, {icon: 'images/default_icon.png'});
+		icons.splice(0, 0, {icon: 'openresources/icons/bulb_16x16.png'});
 	}
 	return icons;
 }
@@ -82,7 +82,7 @@ function init_map() {
         subicons: '${subicons}',
         subicontitles: '${subicontitles}',
         iconBaseURL: MEDIA_URL,
-        subiconmask: 'images/subicon_mask.png',
+        subiconmask: 'openresources/map_marker/subicon_mask.png',
         
         iconText: '${iconText}',
         
@@ -115,7 +115,7 @@ function init_map() {
                 return (feature.cluster) ? feature.cluster.length : '';
             },
             mask: function(feature) {
-                return 'images/' + ((feature.cluster) ? 'cluster_mask.png' : 'marker_mask.png');
+                return 'openresources/map_marker/' + ((feature.cluster) ? 'cluster_mask.png' : 'marker_mask.png');
             },
             subicons: function(feature) {
             	var iconstr = "";
@@ -234,7 +234,7 @@ function add_content(features, adjust_viewport) {
 }
 
 $(document).ready(function(){
-    $.get('/resources/json/view/' + VIEW + '/',function(data) {
+    $.get(JSON_URL, function(data) {
 
         $('.map-loading').hide();
         
