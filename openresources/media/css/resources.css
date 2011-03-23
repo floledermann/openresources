@@ -72,6 +72,7 @@
     -webkit-border-radius: 3px;
     border-radius: 3px;
     background-repeat: no-repeat;
+    background-position: 1px 2px;
 }
 
 .resource div,
@@ -80,13 +81,13 @@
 }
 
 .resource {
-    background-image: url('../images/resource-icon_20x20.png');
+    background-image: url('../icons/bulb_16x16.png');
 }
 
 .view {
     xpadding: 3px 2px;
     xtext-indent: 24px;
-    background-image: url('../images/view-icon_20x20.png');
+    background-image: url('../icons/globe_16x16.png');
     border: 1px dotted #aaa;
 }
 
@@ -173,22 +174,22 @@ textarea.embed-code {
 }
 
 .showmap {
-    background-image: url('../../images/icons/globe_16x16.png');
+    background-image: url('../icons/globe_16x16.png');
 }
 
 .showlist {
-    background-image: url('../../images/icons/list_16x16.png');
+    background-image: url('../icons/list_16x16.png');
 }
 
 .export {
-    background-image: url('../../images/icons/purse_16x16.png');
+    background-image: url('../icons/purse_16x16.png');
 }
 
 .tag {
     padding: 4px 0 3px 23px;
     background-position: 3px 3px;
     background-repeat: no-repeat;
-    background-image: url('../../images/icons/tag_16x16.png');
+    background-image: url('../icons/tag_16x16.png');
 }
 a.tag {
     text-decoration: none;
