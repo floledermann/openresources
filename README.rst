@@ -1,4 +1,3 @@
-.
 
 =============
 OpenResources
