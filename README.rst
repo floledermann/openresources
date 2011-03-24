@@ -7,7 +7,7 @@ OpenResources is a flexible, tag-based database application for Django. It has b
 
 OpenResources comes with "batteries included", which means that you non't only get a Django app but also a set of templates and media files that should give you a starting point and are designed with easy customization in mind.
 
-OpenResources is released under the `GNU Affero General Public License (AGPL)`, which means you can use it for free if you make all changes you make available under the AGPL (even if you run it on a server).
+OpenResources is released under the `GNU Affero General Public License (AGPL)`, which means you can use it for free if you make all (modified) source code available under the AGPL through a link on your site. For details see the file LICENSE.txt .
 
 
 Dependencies
