@@ -10,7 +10,7 @@ setup(
     author_email='ledermann@ims.tuwien.ac.at',
     url='http://bitbucket.org/floledermann/openresources/',
     license='GNU Affero General Public License v3',
-    packages=['openresources'],
+    packages=find_packages(exclude=['testproject']),
     # include all data defined in MANIFEST.in
     include_package_data=True,
 #    package_data={
