@@ -5,9 +5,9 @@ OpenResources
 
 OpenResources is a flexible, tag-based database application for Django. It has been developed for `Vivir Bien`_, a mapping platform for solidarity economy resources.
 
-OpenResources comes with "batteries included", which means that you non't only get a Django app but also a set of templates and media files that should give you a starting point and are designed with easy customization in mind.
+OpenResources comes with "batteries included", which means that you don't only get a Django app but also a set of templates and media files that should give you a starting point and are designed with easy customization in mind.
 
-OpenResources is released under the `GNU Affero General Public License (AGPL)`, which means you can use it for free if you make all (modified) source code available under the AGPL through a link on your site. For details see the file LICENSE.txt .
+OpenResources is released under the `GNU Affero General Public License (AGPL)`_, which means you can use it for free if you make all (modified) source code available under the AGPL through a link on your site. For details see the file LICENSE.txt .
 
 
 Dependencies
@@ -22,7 +22,7 @@ All dependencies on other (non-standard) Django applications are optional. At th
 Running OpenResources
 ---------------------
 
-The enclosed test project allows you to run OpenResources in a local test setup without further installation. Simply run::
+The enclosed test project allows you to run OpenResources in a local test setup without further installation. Inside the ``testproject`` directory, run::
 
   manage.py syncdb
 
@@ -42,7 +42,7 @@ Adding OpenResources to a Django setup should be pretty straightforward. The onl
 
 (We are working on removing this need).
 
-The included templates are expecting the OpenResources media files to be served at {{MEDIA_URL}}openresources/ , so if you want to use (or customize) these you should copy or symlink them accordingly.
+The included templates are expecting the OpenResources media files to be served at ``{{MEDIA_URL}}openresources/`` , so if you want to use (or customize) these you should copy or symlink them accordingly.
 
 
 Credits / Contributors
