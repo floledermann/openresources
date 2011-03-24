@@ -11,6 +11,12 @@ setup(
     url='http://bitbucket.org/floledermann/openresources/',
     license='GNU Affero General Public License v3',
     packages=['openresources'],
+    # include all data defined in MANIFEST.in
+    include_package_data=True,
+#    package_data={
+#        'openresources': ['locale/**', 'media/**', 'templates/**']
+#    },
+
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
