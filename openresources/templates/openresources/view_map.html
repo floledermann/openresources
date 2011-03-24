@@ -1,7 +1,7 @@
 {% extends "openresources/base.html" %}
 {% load i18n %}
 
-{% block title %}Vivir Bien: {{ view.name }}{% endblock %}
+{% block title %}{% trans "View" %}: {{ view.name }}{% endblock %}
 
 {% block extra_head %}
 {{ block.super }}
@@ -13,7 +13,8 @@
 var MEDIA_URL = "{{ MEDIA_URL }}",
     VIEW = "{{ view.shortname }}",
     CONTEXT = {{ context.to_json }},
-    JSON_URL = "{% url geojson name=view.shortname %}";
+    JSON_URL = "{% url geojson name=view.shortname %}",
+    MAP_ATTRIBUTION = '{{ map_attribution|safe }}';
 
 var icon_mappings = [
 {% for mapping in icon_mappings %}

@@ -149,7 +149,7 @@ function init_map() {
     var strategy2 = new OpenLayers.Strategy.Cluster({distance: 30, threshold: 8});
     
     layer_vector = new OpenLayers.Layer.Vector("Vectors", {
-        attribution: 'Resource Data CC-By-NC-SA by <a href="http://vivirbien.mediavirus.org/">Vivir Bien</a>',
+        attribution: MAP_ATTRIBUTION,
         styleMap: new OpenLayers.StyleMap({
             "default": style,
             "select": select_style}),

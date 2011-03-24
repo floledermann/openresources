@@ -175,6 +175,8 @@ def view(request, name, mode=None):
 
     context = _get_context(request)
     context_form = ContextForm(instance=context)
+
+    map_attribution = settings.MAP_ATTRIBUTION
     
     return render_to_response(template, RequestContext(request, locals()))
     
