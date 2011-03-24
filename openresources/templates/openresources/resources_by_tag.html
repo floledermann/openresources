@@ -1,7 +1,7 @@
 {% extends "openresources/base.html" %}
 {% load texttools i18n %}
 
-{% block title %}Vivir Bien: {% trans "Resources with tag:" %} {{key}} = {% if value %}{{ value }}{% else %}*{% endif %}{% endblock %}
+{% block title %}{% trans "Resources with tag:" %} {{key}} = {% if value %}{{ value }}{% else %}*{% endif %}{% endblock %}
 
 {% block openresources_content %}
 
