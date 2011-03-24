@@ -85,10 +85,8 @@
 }
 
 .view {
-    xpadding: 3px 2px;
-    xtext-indent: 24px;
     background-image: url('../icons/globe_16x16.png');
-    border: 1px dotted #aaa;
+    border: 1px solid #aaa;
 }
 
 .empty {
