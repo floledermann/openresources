@@ -7,6 +7,8 @@ OpenResources is a flexible, tag-based database application for Django. It has b
 
 OpenResources comes with "batteries included", which means that you non't only get a Django app but also a set of templates and media files that should give you a starting point and are designed with easy customization in mind.
 
+OpenResources is released under the `GNU Affero General Public License (AGPL)`, which means you can use it for free if you make all changes you make available under the AGPL (even if you run it on a server).
+
 
 Dependencies
 ------------
@@ -43,7 +45,27 @@ Adding OpenResources to a Django setup should be pretty straightforward. The onl
 The included templates are expecting the OpenResources media files to be served at {{MEDIA_URL}}openresources/ , so if you want to use (or customize) these you should copy or symlink them accordingly.
 
 
+Credits / Contributors
+----------------------
+
+The source code of OpenResources is released under the `GNU Affero General Public License (AGPL)`_, copyright by the following contributors:
+
+* `Florian Ledermann`_ (ledermann@ims.tuwien.ac.at)
+
+OpenResources incorporates parts of other open source projects:
+
+* Icons used in the user interface CC-by_ `Yusuke Kamiyamane`_
+* urlify.js based on Django_'s urlify.js
+
 
 .. _`Vivir Bien`: http://vivirbien.mediavirus.org/
 .. _Transmeta: http://code.google.com/p/django-transmeta/
 .. _django-threadedcomments: https://github.com/ericflo/django-threadedcomments
+.. _`GNU Affero General Public License (AGPL)`: http://www.gnu.org/licenses/agpl.html
+.. _`Florian Ledermann`: http://floledermann.com/
+.. _CC-by: http://creativecommons.org/licenses/by/3.0/
+.. _`Yusuke Kamiyamane`: http://p.yusukekamiyamane.com/
+.. _Django: http://www.djangoproject.com/
+
+
+
