@@ -226,7 +226,7 @@ jQuery(function($) {
         var id = this.id.substring(0,this.id.length - 7); // our id is target_id + "_SELECT"
         $('#'+id).val($(this).val());
         ev.preventDefault();
-        //$table.find('tr.extra td.edit-value textarea')[0].focus();
+        $(this).parents('tr').find('textarea')[0].focus();
     });  
 });
 
