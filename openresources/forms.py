@@ -145,7 +145,7 @@ class TemplateTagForm(ModelForm):
         if self.template:
             self.fields['key'] = forms.CharField(widget=ConstWidget(label=template.name), initial=template.key)
         else:
-            self.fields['key'] = forms.CharField(widget=ComboBox(choices=key_choices))
+            self.fields['key'] = forms.CharField(widget=ComboBox(choices=key_choices, empty_label='Popular Tags:'))
             #self.fields['value'].widget=forms.Textarea()
 
     class Meta:
