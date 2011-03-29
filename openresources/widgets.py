@@ -29,13 +29,11 @@ class ComboBox(Select):
     """
     Input widget with additional configurable dropdown of values.
     """
-    def __init__(self, attrs=None, choices=[]):
+    def __init__(self, attrs=None, choices=[], empty_label=None):
         super(ComboBox, self).__init__(attrs, choices)
-        # always make sure there is an empty item at the start of the list
-        if self.choices and self.choices[0] and self.choices[0][0]:
-            self.choices.insert(0,('',''))
+        self.empty_label=empty_label
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, choices=(), empty_label=''):
 
         if value is None: value = ''
         final_attrs = self.build_attrs(attrs, name=name)
@@ -43,9 +41,10 @@ class ComboBox(Select):
             # Only add the 'value' attribute if a value is non-empty.
             final_attrs['value'] = force_unicode(value)
         output = [u'<input type="text"%s />' % flatatt(final_attrs)]
-        options = self.render_options((), [value])
+        options = self.render_options(choices, [value])
         if options:
             output.append(u'<select class="combo-select" id="%s_SELECT">' % (final_attrs['id']))
+            output.append(self.render_option([value], '', self.empty_label or empty_label))
             output.append(options)
             output.append(u'</select>')
         return mark_safe(u'\n'.join(output))
