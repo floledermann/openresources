@@ -15,6 +15,7 @@ Dependencies
 
 All dependencies on other (non-standard) Django applications are optional. At the moment OpenResources is prepared to work with the following 3rd party Djago applications:
 
+* `Python Imaging Library`_ for the Icon.image field
 * Transmeta_ for multilingual installations
 * django-threadedcomments_ for comments inside resources and views
 
@@ -66,6 +67,6 @@ OpenResources incorporates parts of other open source projects:
 .. _CC-by: http://creativecommons.org/licenses/by/3.0/
 .. _`Yusuke Kamiyamane`: http://p.yusukekamiyamane.com/
 .. _Django: http://www.djangoproject.com/
-
+.. _`Python Imaging Library`: http://www.pythonware.com/products/pil/
 
 
