@@ -225,10 +225,9 @@ def edit_view(request, name=None):
     if request.method == "POST":
         form = ViewForm(request.user, request.POST, instance=view, prefix='view')
         if form.is_valid():
-
             
             if not view:
-                # new resource
+                # new view
                 view = form.save(commit=False)
                 view.creator = request.user
                 view.save()
@@ -236,8 +235,8 @@ def edit_view(request, name=None):
                 form.save()
             
             queryformset = QueryFormSet(request.POST, instance=view, prefix='queries')
-            valid1 = queryformset.is_valid()
-            if valid1:
+            queries_valid = queryformset.is_valid()
+            if queries_valid:
                 queryformset.saved_forms = []
                 queryformset.save_existing_objects()
                 queries = queryformset.save_new_objects(commit=False)
@@ -246,8 +245,8 @@ def edit_view(request, name=None):
                     query.save()
                     
             mappingformset = TagMappingFormSet(request.POST, instance=view, prefix='mappings')
-            valid2 = mappingformset.is_valid()
-            if valid2:
+            mappings_valid = mappingformset.is_valid()
+            if mappings_valid:
                 mappingformset.saved_forms = []
                 mappingformset.save_existing_objects()
                 mappings = mappingformset.save_new_objects(commit=False)
@@ -255,7 +254,7 @@ def edit_view(request, name=None):
                     mapping.creator = request.user
                     mapping.save()
             
-            if valid1 and valid2:       
+            if queries_valid and mappings_valid:       
                 if 'action' in request.POST and request.POST['action'] == 'add_row':
                     return redirect_to(request, reverse('openresources_edit_view', kwargs={'name':view.shortname}))               
                 else:
@@ -267,7 +266,7 @@ def edit_view(request, name=None):
         form = ViewForm(request.user, instance=view, prefix='view')
         queryformset = QueryFormSet(instance=view, prefix='queries')
         mappingformset = TagMappingFormSet(instance=view, prefix='mappings')
-        
+    
     popular_tags = Tag.objects.values('key').annotate(key_count=Count('key')).filter(key_count__gt=2).order_by('key')
     tag_help = settings.TAG_HELP_LINKS
 

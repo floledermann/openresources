@@ -32,6 +32,11 @@ var MEDIA_URL = "{{ MEDIA_URL}}";
 
 <form method="post" action="{% url openresources_edit_view name=view.shortname %}" autocomplete="off">
 {% csrf_token %}
+{% if form.non_field_errors %}
+<div class="error">
+{{ form.non_field_errors }}
+</div>
+{% endif %}
 <div class="formbox">
 <h2>{% trans "Basic Info" %}</h2>
 {% fieldset name as fset from form %}
@@ -69,6 +74,11 @@ var MEDIA_URL = "{{ MEDIA_URL}}";
         <th>{{ field.label }}</th>
 {% endfor %}
 </tr>
+{% endif %}
+{% if form.non_field_errors %}
+<tr class="error"><td colspan="3">
+{{ form.non_field_errors }}
+</td></tr>
 {% endif %}
 <tr class="{% if forloop.first %}first{% endif %}{% if forloop.last %} extra{% endif %}">
     {% for field in form.visible_fields %}
@@ -111,6 +121,11 @@ var MEDIA_URL = "{{ MEDIA_URL}}";
         <th>{{ field.label }}</th>
 {% endfor %}
 </tr>
+{% endif %}
+{% if form.non_field_errors %}
+<tr class="error"><td colspan="3">
+{{ form.non_field_errors }}
+</td></tr>
 {% endif %}
 <tr class="{% if forloop.first %}first{% endif %}{% if forloop.last %} extra{% endif %}">
     {% for field in form.visible_fields %}

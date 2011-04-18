@@ -132,7 +132,7 @@ class View(models.Model):
     featured = models.BooleanField(default=False)
     protected = models.BooleanField(default=False, help_text=_('(Hidden from anonymous users)'))
 
-    default_resource_template = models.ForeignKey('ResourceTemplate', null=True)    
+    default_resource_template = models.ForeignKey('ResourceTemplate', null=True, blank=True)    
     order_by = models.CharField(max_length=200, null=True, blank=True)
     
     sub_views = models.ManyToManyField('self', related_name='parent_views', null=True, blank=True)

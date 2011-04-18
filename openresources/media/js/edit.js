@@ -182,7 +182,7 @@ jQuery(function($) {
     $('#id_shortname, #id_view-shortname').each(function() {
         if (this.value) this._dirty = true;
     });
-    $('#id_name, #id_view-name').keyup(function() {
+    $('#id_name, #id_view-name, #id_view-name_en').keyup(function() {
         var el = $('#id_shortname, #id_view-shortname');
         if (! el[0]._dirty) {
             el.val(URLify($(this).val(), 100));
