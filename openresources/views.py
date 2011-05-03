@@ -42,6 +42,7 @@ from openresources import settings
 
 def resource(request, key):
     resource = get_object_or_404(Resource, shortname=key)
+    related_tags = Tag.objects.filter(value_relation=resource).select_related('resource')
     return render_to_response('openresources/resource.html', RequestContext(request, locals()))
 
 #@permission_required('openresources.change_resource')
