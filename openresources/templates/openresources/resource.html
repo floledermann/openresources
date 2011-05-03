@@ -64,6 +64,16 @@ function hide_reply_form(comment_id, url, person_name) {
 </table>
 </div>
 
+{% if related_tags %}
+<h2>{% trans "Related resources" %}</h2>
+<table class="related-resources">
+{% for t in related_tags %}
+<tr><td><a href="{% url openresources_resource key=t.resource.shortname %}">{{ t.resource.name }}</a></td><td><a class="tag" href="{% url openresources_tag_key key=t.key %}">{{ t.key }}</a></td></tr>
+{% endfor %}
+</table>
+{% endif %}
+
+
 <div class="actions">
 {% if request.user.is_authenticated %}
 {# {% if perms.openresources.edit_resource or perms.resources.add_tag %} #}
